@@ -55,7 +55,7 @@ unsigned int DES::feistel(unsigned int r, unsigned long long k){
 }
 
 unsigned int DES::cyclicLeftRotation_28bits(unsigned int n, int d){
-  return (0x0fffffff & (n << d)) | ((d | 1) & (n >> (28 - d)));
+  return (0xfffffff & (n << d)) | ((d | 1) & (n >> (28 - d)));
 }
 
 unsigned long long DES::swapBits(unsigned long long n, unsigned int n_bit_size, const unsigned char* LUT_PTR, unsigned int lut_bit_size){
